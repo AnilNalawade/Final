@@ -39,13 +39,13 @@
 
 <%
 Class.forName("com.mysql.jdbc.Driver");
-String url="jdbc:mysql://localhost:3306/project";
-Connection con=DriverManager.getConnection(url,"root","root");
+String url="jdbc:mysql://10.130.141.233:3306/sampledb";
+Connection con=DriverManager.getConnection(url,"AnilNalawade","Nilnik143");
 
 int blogid=Integer.parseInt(request.getParameter("blogid"));
 
 Statement stmt=con.createStatement();
-String query="select r.first_name,r.last_name,b.BlogContent,b.BlogTitle,b.createdDate from registration r inner join blogs1 b on r.login_name=b.login_name where b.blogid="+blogid; 
+String query="select r.first_name,r.last_name,b.BlogContent,b.BlogTitle,b.createdDate from registration r inner join blogs b on r.login_name=b.login_name where b.blogid="+blogid; 
 ResultSet rs=stmt.executeQuery(query);
 
 while(rs.next())
