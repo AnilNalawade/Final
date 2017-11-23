@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Footer</title>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
 <link rel="stylesheet" href="files/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="files/bootstrap.min.css" type="text/css">

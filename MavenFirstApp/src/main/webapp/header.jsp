@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Header</title>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
 <link rel="stylesheet" href="files/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="files/bootstrap.min.css" type="text/css">
@@ -28,7 +28,7 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                     <li class="active"><a href="home.jsp">Home <span class="sr-only">(current)</span></a></li>
+                     <li class="active"><a href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="publicBlog.jsp">Public Blogs</a></li>
                     <li><a href="contactUs.jsp">Contact Us</a></li>
                 </ul>

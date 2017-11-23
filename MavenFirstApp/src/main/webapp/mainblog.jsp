@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Main Blog</title>
+
+<link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
 <link rel="stylesheet" href="mainblog.css" type="text/css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,6 +20,9 @@
             document.getElementById("mySidenav").style.width = "0";
         }
     </script>
+    
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 
 </head>
 <body>

@@ -11,18 +11,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>My Blog</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
 <link href="files/bootstrap.css" rel="stylesheet">
 <link href="files/bootstrap.min.css" rel="stylesheet">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">
+        </script>
+        
+   <!--      <script>
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+</script> -->
 </head>
 <body>
 <jsp:include page="header1.jsp"></jsp:include>
 <%
 Class.forName("com.mysql.jdbc.Driver");
-String url="jdbc:mysql://10.130.141.233:3306/sampledb";
-Connection con=DriverManager.getConnection(url,"AnilNalawade","Nilnik143");
+String url="jdbc:mysql://localhost:3306/blogger";
+Connection con=DriverManager.getConnection(url,"root","Nilnik@143");
 
 String name=(String)session.getAttribute("uname");
+if(name == null)
+{
+	 String redirectURL = "login.jsp";
+	 response.sendRedirect(redirectURL);	
+}
 
 Statement stmt=con.createStatement();
 String query="select b.blogid,r.first_name,r.last_name,b.BlogContent,b.BlogTitle,b.createdDate from registration r inner join blogs b on r.login_name=b.login_name where r.login_name='"+name+"'"; 

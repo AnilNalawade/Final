@@ -9,23 +9,46 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>My Profile</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
  <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
  <script type="text/javascript" src="bootstrap.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script type="text/javascript" src="bootstrap.min.css"></script>
  <script type="text/javascript" src="jquery-1.12.1.min.js"></script> 
+ 
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">
+        </script>
+        
+  <!--       <script>
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+</script> -->
 </head>
 <body>
 <jsp:include page="header1.jsp"></jsp:include>
 <%
+
+
+
 Class.forName("com.mysql.jdbc.Driver");
-String url="jdbc:mysql://10.130.141.233:3306/sampledb";
-Connection con=DriverManager.getConnection(url,"AnilNalawade","Nilnik143");
+String url="jdbc:mysql://localhost:3306/blogger";
+Connection con=DriverManager.getConnection(url,"root","Nilnik@143");
 
 String name=(String)session.getAttribute("uname");
 String pwd=(String)session.getAttribute("pwd");
+
+if(name == null)
+{
+	 String redirectURL = "login.jsp";
+	 response.sendRedirect(redirectURL);	
+}
 
 Statement stmt=con.createStatement();
 String query="select * from registration where login_name='"+name+"' and password='"+pwd+"'";

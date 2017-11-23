@@ -11,14 +11,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Create Blog</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
 <link rel="stylesheet" href="files/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="files/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="files/bootstrap.min.js" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">
+        </script>
+        
+  <!--       <script>
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+</script> -->
 </head>
 <body>
 <jsp:include page="header1.jsp"></jsp:include>
 <%
+
+String name=(String)session.getAttribute("uname");
+if(name == null)
+{
+	 String redirectURL = "login.jsp";
+	    response.sendRedirect(redirectURL);	
+}
+
 String id=request.getParameter("id");
 String title=request.getParameter("title");
 String blog=request.getParameter("blogContent");
@@ -28,8 +50,8 @@ String createdDate=date.toString();
 if(title != null && blog != null && createdDate !=null)
 {
 	Class.forName("com.mysql.jdbc.Driver");
-	String url="jdbc:mysql://10.130.141.233:3306/sampledb";
-	Connection con=DriverManager.getConnection(url,"AnilNalawade","Nilnik143");
+	String url="jdbc:mysql://localhost:3306/blogger";
+	Connection con=DriverManager.getConnection(url,"root","Nilnik@143");
 
  
     String uName=(String)session.getAttribute("uname");

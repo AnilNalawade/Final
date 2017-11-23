@@ -11,6 +11,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Public Blog</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
 <link href="files/bootstrap.css" rel="stylesheet">
 <link href="files/bootstrap.min.css" rel="stylesheet">
@@ -19,8 +21,8 @@
 <jsp:include page="header.jsp"></jsp:include>
 <%
 Class.forName("com.mysql.jdbc.Driver");
-String url="jdbc:mysql://10.130.141.233:3306/sampledb";
-Connection con=DriverManager.getConnection(url,"AnilNalawade","Nilnik143");
+String url="jdbc:mysql://localhost:3306/blogger";
+Connection con=DriverManager.getConnection(url,"root","Nilnik@143");
 
 Statement stmt=con.createStatement();
 String query="select b.blogid,r.first_name,r.last_name,b.BlogContent,b.BlogTitle,b.createdDate from registration r inner join blogs b on r.login_name=b.login_name"; 

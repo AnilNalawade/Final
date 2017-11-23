@@ -8,6 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Register</title>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css"> -->
 <link rel="stylesheet" href="files/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="files/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="files/bootstrap.min.js" type="text/css">
@@ -31,8 +33,8 @@ if(fName != null && lName!=null && logName!=null && password != null && password
  if(password.equals(password1))
  {
   	Class.forName("com.mysql.jdbc.Driver");
-	String url="jdbc:mysql://10.130.141.233:3306/sampledb";
-	Connection con=DriverManager.getConnection(url,"AnilNalawade","Nilnik143");
+	String url="jdbc:mysql://localhost:3306/blogger";
+	Connection con=DriverManager.getConnection(url,"root","Nilnik@143");
 
 	PreparedStatement pstmt=con.prepareStatement("insert into registration values(?,?,?,?,?,?,?)");
 	pstmt.setString(1, fName);
@@ -54,7 +56,7 @@ if(fName != null && lName!=null && logName!=null && password != null && password
 	con.close();
  }
 %>
-<jsp:forward page="home.jsp"></jsp:forward>
+<jsp:forward page="index.jsp"></jsp:forward>
 <%} else {
 
 %>

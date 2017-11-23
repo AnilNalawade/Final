@@ -10,6 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Contact Us</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.css">
 <link rel="stylesheet" href="files/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="files/bootstrap.min.css" type="text/css">
@@ -29,8 +30,8 @@ String message=request.getParameter("feedback");
 if(name != null && email != null && contact !=null && message !=null)
 {
  Class.forName("com.mysql.jdbc.Driver");
- String url="jdbc:mysql://10.130.141.233:3306/sampledb";
- Connection con=DriverManager.getConnection(url,"AnilNalawade","Nilnik143");
+ String url="jdbc:mysql://localhost:3306/blogger";
+ Connection con=DriverManager.getConnection(url,"root","Nilnik@143");
 
  PreparedStatement pstmt=con.prepareStatement("insert into ContactUs values(?,?,?,?,?)");
 	pstmt.setString(1,id);
@@ -42,7 +43,7 @@ if(name != null && email != null && contact !=null && message !=null)
 	pstmt.executeUpdate();
 	con.close();
 %>
-<%-- <jsp:forward page="home.jsp"></jsp:forward> --%>
+<%-- <jsp:forward page="index.jsp"></jsp:forward> --%>
 
 <% } else { %>
  
